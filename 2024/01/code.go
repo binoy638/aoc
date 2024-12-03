@@ -71,9 +71,7 @@ func main() {
 
 	println(sum)
 
-	endTime := time.Now()
+	totalTime := time.Since(startTime)
 
-	totalTime := endTime.Nanosecond() - startTime.Nanosecond()
-
-	fmt.Printf("Total time taken: %d", totalTime)
+	fmt.Printf("Total time taken: %s \n", totalTime)
 }
