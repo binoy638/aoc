@@ -13,7 +13,7 @@ import (
 
 func main() {
 	startTime := time.Now()
-	lines, err := utils.ReadInputFromFile("input.txt")
+	inputs, err := utils.ReadInputFromFile("input.txt")
 
 	if err != nil {
 		fmt.Printf("Error getting input: %v", err)
@@ -21,7 +21,7 @@ func main() {
 
 	var list1, list2 []int
 
-	for _, value := range lines {
+	for _, value := range inputs {
 		l := strings.Fields(value)
 		firstNum, err := strconv.Atoi(l[0])
 		if err != nil {
