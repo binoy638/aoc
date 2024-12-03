@@ -1,42 +1,19 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"math"
-	"os"
 	"sort"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/binoy638/aoc/utils"
 )
-
-func readInput(filename string) ([]string, error) {
-	file, err := os.OpenFile(filename, os.O_RDONLY, 0644)
-
-	var res []string
-
-	if err != nil {
-		return res, err
-	}
-
-	defer file.Close()
-
-	scanner := bufio.NewScanner(file)
-
-	scanner.Split(bufio.ScanLines)
-
-	for scanner.Scan() {
-		res = append(res, scanner.Text())
-	}
-
-	return res, nil
-
-}
 
 func main() {
 	startTime := time.Now()
-	lines, err := readInput("input.txt")
+	lines, err := utils.ReadInputFromFile("input.txt")
 
 	if err != nil {
 		fmt.Printf("Error getting input: %v", err)
