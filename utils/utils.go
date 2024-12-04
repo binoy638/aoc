@@ -2,7 +2,9 @@ package utils
 
 import (
 	"bufio"
+	"fmt"
 	"os"
+	"strconv"
 )
 
 func ReadInputFromFile(filename string) ([]string, error) {
@@ -26,4 +28,13 @@ func ReadInputFromFile(filename string) ([]string, error) {
 
 	return res, nil
 
+}
+
+func ParseInt(strNum string) int {
+	num, err := strconv.Atoi(strNum)
+
+	if err != nil {
+		panic(fmt.Sprintf("err converting %s to int", strNum))
+	}
+	return num
 }
